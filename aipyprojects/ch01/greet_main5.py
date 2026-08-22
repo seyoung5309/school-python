@@ -1,4 +1,4 @@
 import greet as g
 
 
-g.bye9()
+g.bye()
