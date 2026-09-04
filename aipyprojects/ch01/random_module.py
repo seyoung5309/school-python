@@ -21,3 +21,6 @@ sample = ['1번', '2번 ', '3번', '4번', '5번', '6번', '7번', '8번', '9번
 print('샘플 대상 = ', sample)
 print('선택된 값 = ', random.sample(sample, 3))
 print('random.sample(sample, 3) : ', random.sample(sample, 3))
+
+# 랜덤으로 로또 번호 6개를   생성하는 프로그램
+
