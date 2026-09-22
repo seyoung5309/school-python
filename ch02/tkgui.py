@@ -1,0 +1,22 @@
+import tkinter as tk
+root = tk.Tk()
+root.title("tkinter 위젯 도감")
+frame = tk.Frame(root, padx=16, pady=16)
+frame.pack(fill="both", expand=True)
+tk.Label(frame, text="Label: 설명을 표시합니다").pack()
+tk.Entry(frame).pack(fill="x")
+tk.Text(frame, height=3).pack(fill="x")
+checked = tk.BooleanVar()
+tk.Checkbutton(frame, text="학습 완료", variable=checked).pack()
+choice = tk.StringVar(value="A")
+for value in ["A", "B"]:
+    tk.Radiobutton(frame, text=value, variable=choice, value=value).pack()
+listbox = tk.Listbox(frame, height=3)
+for value in ["모듈", "패키지", "GUI"]:
+    listbox.insert(tk.END, value)
+listbox.pack()
+canvas = tk.Canvas(frame, width=240, height=60, bg="white")
+canvas.create_oval(10, 10, 50, 50, fill="gold")
+canvas.pack()
+tk.Button(frame, text="상태 출력", command=lambda: print(checked.get(), choice.get())).pack()
+root.mainloop()
