@@ -22,5 +22,14 @@ window = tk.Tk()
 window.title("나만의 메모장")
 text_area = tk.Text(window, wrap="word")
 text_area.pack(expand=True, fill="both") # True 대신 1도 가능. 
-button_open.pack()
+
+manu = tk.Menu(window)
+window.config(menu=manu)
+file_menu = tk.Menu(manu, tearoff=0)
+manu.add_cascade(label="파일", menu=file_menu)
+file_menu.add_command(label="열기", command=open_file)
+file_menu.add_command(label="저장", command=save_file)
+file_menu.add_separator()
+file_menu.add_command(label="종료", command=window.quit)
+window.mainloop()
 
